@@ -10,24 +10,24 @@
 <body>
         <h1 class="text-5xl text-center mt-4">Blog question</h1>
         
- <main class="container mx-auto mt-10 space-y-5">
+ <main class="container mx-auto mt-10 space-y-5 p-5">
     <div class="collapse bg-base-200">
         <input type="radio" name="my-accordion-1" checked="checked" /> 
-        <div class="collapse-title text-4xl font-medium">
+        <div class="collapse-title text-xl md:text-4xl font-medium">
             Discuss the scope of var, let, and const
         </div>
         <div class="collapse-content space-y-5"> 
-          <p class="text-xl bg-slate-500 p-5 rounded-lg text-white">var:
+          <p class=" text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">var:
 
             Function-scoped: Variables declared with var are function-scoped, which means they are accessible only within the function in which they are defined.
             Hoisting: var declarations are hoisted to the top of their containing function or global scope. This means you can use a var variable before it's actually declared in the code, but it will be initialized with undefined.</p>
-            <p class="text-xl bg-slate-500 p-5 rounded-lg text-white">let:
+            <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">let:
 
                 Block-scoped: Variables declared with let have block-level scope, which means they are accessible only within the block (e.g., inside loops, conditionals, or functions) in which they are defined.
                 No hoisting: Unlike var, let variables are not hoisted. You cannot access them before their declaration.
             </p>
           
-            <p class="text-xl bg-slate-500 p-5 rounded-lg text-white">lconst:
+            <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">lconst:
 
                 Block-scoped: Like let, variables declared with const are block-scoped.
                 Constant value: Variables declared with const are constants, meaning their value cannot be reassigned after declaration. However, it's important to note that the value itself is not necessarily immutable. If a const variable holds an object or array, you can modify the properties or elements of that object or array.
@@ -38,14 +38,14 @@
       </div>
       <div class="collapse bg-base-200">
         <input type="radio" name="my-accordion-1" /> 
-        <div class="collapse-title text-4xl font-medium">
+        <div class="collapse-title text-xl md:text-4xl font-medium">
             Tell us the use cases of null and undefined
         </div>
         <div class="collapse-content space-y-5"> 
-          <p class="text-xl bg-slate-500 p-5 rounded-lg text-white">Intentional absence of value: null is used to explicitly indicate that a variable, object 
+          <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">Intentional absence of value: null is used to explicitly indicate that a variable, object 
             property, or function return value intentionally has no value or no object reference.
             As a placeholder: Sometimes, null is used as a placeholder when you want to reserve a spot for a value that will be assigned later. This is typically done when designing data structures or initializing variables before actual values are known.</p>
-          <p class="text-xl bg-slate-500 p-5 rounded-lg text-white">Implicit absence of value: undefined is used when a variable has been declared but has not been assigned a value. It represents the absence of an actual value.
+          <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">Implicit absence of value: undefined is used when a variable has been declared but has not been assigned a value. It represents the absence of an actual value.
             Function parameters: Function parameters that are not provided with an argument are undefined by default.
             Uninitialized variables: Variables declared without an initial value are also undefined by default.</p>
             
@@ -53,11 +53,11 @@
       </div>
       <div class="collapse bg-base-200">
         <input type="radio" name="my-accordion-1" /> 
-        <div class="collapse-title text-4xl font-medium">
+        <div class="collapse-title text-xl md:text-4xl font-medium">
           What do you mean by REST API?
         </div>
         <div class="collapse-content"> 
-          <p class="text-xl bg-slate-500 p-5 rounded-lg text-white">REST API, which stands for Representational State Transfer Application Programming Interface, is a set of architectural principles and constraints for designing and interacting with web services. REST is not a specific technology but rather a style of designing networked applications that use the HTTP protocol.
+          <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">REST API, which stands for Representational State Transfer Application Programming Interface, is a set of architectural principles and constraints for designing and interacting with web services. REST is not a specific technology but rather a style of designing networked applications that use the HTTP protocol.
 
             Key characteristics and principles of REST API include:
             
