@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"rel="stylesheet"type="text/css"/>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class=" lg:p-16">
+  <body class=" p-5 lg:p-16">
     <!-- header section start -->
     <header>
         <div class="navbar bg-base-100 border-b-2 py-4 lg:py-6">
@@ -19,7 +19,7 @@
             </div>
             <div class="navbar-end">
                   
-                <button class="btn bg-[#FF1F3D] text-white text-sm md:text-lg hover:text-black">
+                <button onclick="blogsPage()" class="btn bg-[#FF1F3D] text-white text-sm md:text-lg hover:text-black">
                     Blogs
                 </button>
             </div>
@@ -33,8 +33,8 @@
                 <!-- <button class="tab text-lg  active:bg-[#FF1F3D]">tab</button> -->
                 
             </div>
-            <div id="videos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
+            <div id="videos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+                    
             </div>
         </section>
     </main>
@@ -43,3 +43,5 @@
     <script src="script/index.js"></script>
   </body>
 </html>
+
+
