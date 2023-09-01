@@ -30,6 +30,9 @@ const handleLoadData = async() =>{
     const videosContainer = document.getElementById('videos-container');
     videosContainer.textContent = '';
     videos?.forEach(video => {
+        if(video?.others?.views !== null){
+            
+        }
         let sec = video?.others?.posted_date;
         let hour = parseInt(sec/3600);
         let min = parseInt((sec%3600)/60);
@@ -39,8 +42,7 @@ const handleLoadData = async() =>{
         <div class="card bg-base-100 shadow-xl">
         <figure class=" w-full h-52 mx-auto relative">
             <img class ="w-full" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
-            <span class="absolute bg-[#171717] text-white bottom-2 right-2 p-1 rounded-lg">
-            ${hour} hours ${min} minutes ago
+            ${video?.others?.posted_date?`<div class=" absolute badge badge-neutral bottom-2 right-2">${hour}hours ${min}minutes ago</div>`:"" }
             </span>
         </figure>
         <div class="card-body flex flex-row items-center gap-5">
@@ -71,8 +73,6 @@ const handleLoadData = async() =>{
 
         
     });
-    
-    
  }
 handleVideosLoader("1000");
 handleLoadData();
@@ -81,9 +81,9 @@ const handleSort = async()=>{
     const data = await res.json();
     const videos = data.data;
 
-    const viewCompare = (a,b)=>{
-        const viewsA = parseInt(a?.others?.views);
-        const viewsB = parseInt(b?.others?.views);
+    const viewCompare = (videos1,videos2)=>{
+        const viewsA = parseInt(videos1?.others?.views);
+        const viewsB = parseInt(videos2?.others?.views);
         return viewsB - viewsA;
     }
     videos.sort(viewCompare)
@@ -94,16 +94,14 @@ const handleSort = async()=>{
         let sec = video?.others?.posted_date;
         let hour = parseInt(sec/3600);
         let min = parseInt((sec%3600)/60);
-        const viewsDataString = video?.others?.views;
-        const viewsData = parseInt(viewsDataString);
-        // console.log(viewsData);
+        // const viewsData= parseFloat(video?.others?.views);
+
         const div = document.createElement('div');
         div.innerHTML=`
         <div class="card bg-base-100 shadow-xl">
         <figure class=" w-full h-52 mx-auto relative">
             <img class ="w-full" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
-            <span class="absolute bg-[#171717] text-white bottom-2 right-2 p-1 rounded-lg">
-            ${hour} hours ${min} minutes ago
+            ${video?.others?.posted_date?`<div class=" absolute badge badge-neutral bottom-2 right-2">${hour}hours ${min}minutes ago</div>`:""}
             </span>
         </figure>
         <div class="card-body flex flex-row items-center gap-5">

@@ -17,17 +17,16 @@
             Discuss the scope of var, let, and const
         </div>
         <div class="collapse-content space-y-5"> 
-          <p class=" text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">var:
+          <p class=" text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white"><span class="font-bold text-2xl underline">var:</span>
 
-            Function-scoped: Variables declared with var are function-scoped, which means they are accessible only within the function in which they are defined.
-            Hoisting: var declarations are hoisted to the top of their containing function or global scope. This means you can use a var variable before it's actually declared in the code, but it will be initialized with undefined.</p>
-            <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">let:
+            Variables declared with var are function-scoped, which means they are accessible only within the function in which they are defined.var declarations are hoisted to the top of their containing function or global scope. This means you can use a var variable before it's actually declared in the code, but it will be initialized with undefined.</p>
+            <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white"><span class="font-bold text-2xl underline">let:</span>
 
-                Block-scoped: Variables declared with let have block-level scope, which means they are accessible only within the block (e.g., inside loops, conditionals, or functions) in which they are defined.
+                 Variables declared with let have block-level scope, which means they are accessible only within the block (e.g., inside loops, conditionals, or functions) in which they are defined.
                 No hoisting: Unlike var, let variables are not hoisted. You cannot access them before their declaration.
             </p>
           
-            <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">lconst:
+            <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white"><span class="font-bold text-2xl underline">Const:</span>
 
                 Block-scoped: Like let, variables declared with const are block-scoped.
                 Constant value: Variables declared with const are constants, meaning their value cannot be reassigned after declaration. However, it's important to note that the value itself is not necessarily immutable. If a const variable holds an object or array, you can modify the properties or elements of that object or array.
@@ -42,12 +41,8 @@
             Tell us the use cases of null and undefined
         </div>
         <div class="collapse-content space-y-5"> 
-          <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">Intentional absence of value: null is used to explicitly indicate that a variable, object 
-            property, or function return value intentionally has no value or no object reference.
-            As a placeholder: Sometimes, null is used as a placeholder when you want to reserve a spot for a value that will be assigned later. This is typically done when designing data structures or initializing variables before actual values are known.</p>
-          <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">Implicit absence of value: undefined is used when a variable has been declared but has not been assigned a value. It represents the absence of an actual value.
-            Function parameters: Function parameters that are not provided with an argument are undefined by default.
-            Uninitialized variables: Variables declared without an initial value are also undefined by default.</p>
+          <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white"><span class="font-bold text-2xl underline">null:</span> The null value is a on of javascript's primitive value and is treated as a falsy of boolean operation.The value null is written with a literal: null. null is not an identifier for a property of the global object, like undefined can be.null is often retrieved in a place where an object can be expected but no object is relevant</p>
+          <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white"><span class="font-bold text-2xl underline">undefined:</span>The undefined global property represents the primitive value undefined. It is one of JavaScript's primitive types.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.</p>
             
         </div>
       </div>
@@ -58,26 +53,8 @@
         </div>
         <div class="collapse-content"> 
           <p class="text-sm md:text-xl bg-slate-500 p-5 rounded-lg text-white">REST API, which stands for Representational State Transfer Application Programming Interface, is a set of architectural principles and constraints for designing and interacting with web services. REST is not a specific technology but rather a style of designing networked applications that use the HTTP protocol.
-
-            Key characteristics and principles of REST API include:
-            
-            1. **Statelessness**: Each HTTP request from a client to a server must contain all the information needed to understand and process the request. The server should not store any client state between requests. This allows for scalability and simplifies communication.
-            
-            2. **Resources**: Resources are the key abstractions in REST. A resource can be any object or data that can be identified by a unique URL. Resources can represent entities such as users, products, or documents.
-            
-            3. **HTTP Methods**: REST APIs use standard HTTP methods (GET, POST, PUT, DELETE, etc.) to perform operations on resources. Each HTTP method has a specific meaning, such as GET for retrieving data, POST for creating new resources, PUT for updating resources, and DELETE for removing resources.
-            
-            4. **Uniform Interface**: A uniform and consistent interface is a fundamental principle of REST. This means that resources are accessed and manipulated in a predictable way using standardized methods and URIs.
-            
-            5. **Representation**: Resources can have multiple representations, such as JSON, XML, HTML, or others. Clients interact with resources by exchanging representations. For example, a client can request a resource in JSON format, and the server will respond with the resource data in that format.
-            
-            6. **Stateless Communication**: Each request from a client to a server must include all the information needed to understand and process the request. The server does not maintain any client state. Any necessary state is kept on the client side.
-            
-            7. **Layered System**: In a RESTful architecture, the client may not be aware of the various intermediaries (proxies, load balancers, etc.) between it and the server. This layered system allows for flexibility and scalability.
-            
-            8. **Code on Demand (Optional)**: This constraint is optional and allows the server to send executable code to the client, such as JavaScript. This feature is not commonly used in modern RESTful APIs.
-            
-            REST APIs are widely used for building web services and are often used for exposing data and functionality over the internet. They are known for their simplicity, scalability, and ease of use, making them a popular choice for building APIs for web and mobile applications.</p>
+ 
+          </p>
         </div>
       </div>
  </main>
