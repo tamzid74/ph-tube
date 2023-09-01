@@ -40,13 +40,13 @@ const handleLoadData = async() =>{
         const div = document.createElement('div');
         div.innerHTML =`
         <div class="card bg-base-100 shadow-xl">
-        <figure class=" w-full h-52 mx-auto relative">
-            <img class ="w-full" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
+        <figure class=" w-full h-auto md:h-48 lg:h-60 rounded-lg relative">
+            <img class ="w-full h-72" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
             ${video?.others?.posted_date?`<div class=" absolute badge badge-neutral bottom-2 right-2">${hour}hours ${min}minutes ago</div>`:"" }
             </span>
         </figure>
-        <div class="card-body flex flex-row items-center gap-5">
-            <div>
+        <div class="card-body flex flex-row gap-5">
+            <div class="flex ">
                 <img class="w-10 h-10 rounded-full" src="${video?.authors[0]?.profile_picture}" alt="image loading"/>
                 
             </div>
@@ -60,9 +60,10 @@ const handleLoadData = async() =>{
                     ${video?.authors[0]?.verified === true?'<img src="images/fi_10629607.png" alt="">':""}
                 </div>
                 </div>
+                <p class=" py-4 text-[#171717B2] font-medium">${video?.others?.views} ${"views"}</p>
             </div>
         </div>
-        <p class="mx-20 py-4 text-[#171717B2] font-medium">${video?.others?.views} ${"views"}</p>
+        
         </div>
         
           
@@ -99,12 +100,12 @@ const handleSort = async()=>{
         const div = document.createElement('div');
         div.innerHTML=`
         <div class="card bg-base-100 shadow-xl">
-        <figure class=" w-full h-52 mx-auto relative">
-            <img class ="w-full" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
+        <figure class="h-auto w-full md:h-48 lg:h-60 rounded-lg relative">
+            <img class="w-full h-72" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
             ${video?.others?.posted_date?`<div class=" absolute badge badge-neutral bottom-2 right-2">${hour}hours ${min}minutes ago</div>`:""}
             </span>
         </figure>
-        <div class="card-body flex flex-row items-center gap-5">
+        <div class="card-body flex flex-row gap-5">
             <div>
                 <img class="w-10 h-10 rounded-full" src="${video?.authors[0]?.profile_picture}" alt="image loading"/>
                 
@@ -119,9 +120,10 @@ const handleSort = async()=>{
                     ${video?.authors[0]?.verified === true?'<img src="images/fi_10629607.png" alt="">':""}
                 </div>
                 </div>
+                <p class=" py-4 text-[#171717B2] font-medium">${video?.others?.views} ${"views"}</p>
             </div>
         </div>
-        <p class="mx-20 py-4 text-[#171717B2] font-medium">${video?.others?.views} ${"views"}</p>
+        
         </div>
         
           
