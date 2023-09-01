@@ -4,12 +4,14 @@ const handleLoadData = async() =>{
     const catagories = data.data;
     const catagoriesContainer = document.getElementById('catagories-container');
     catagories.forEach(category => {
-        console.log(category);
+        // console.log(category);
         const div = document.createElement('div');
         div.innerHTML=`
             <button onclick="handleVideosLoader('${category.category_id}')" class="text-base text-[#252525B2] px-2 md:px-8 rounded-lg md:text-2xl focus:bg-[#FF1F3D] focus:text-white">${category?.category?category?.category:'<img src="images/Logo.png" alt="">'}</button> 
         `
         catagoriesContainer.appendChild(div);
+
+        
     });
     
 };
@@ -17,16 +19,31 @@ const handleLoadData = async() =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await res.json();
     const videos = data.data;
+    const imgDiv = document.getElementById('img-div');
+    // console.log(videos);
+    if(videos.length === 0){
+        imgDiv.classList.remove('hidden');
+    }else{
+        imgDiv.classList.add('hidden');
+    }
     const videosContainer = document.getElementById('videos-container');
     videosContainer.textContent = '';
     videos?.forEach(video => {
+        let sec = video?.others?.posted_date;
+        let hour = parseInt(sec/3600);
+        let min = parseInt((sec%3600)/60);
         // console.log(video);
         const div = document.createElement('div');
         div.innerHTML =`
         <div class="card bg-base-100 shadow-xl">
-        <figure class=" w-full h-52 mx-auto"><img class ="w-full" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" /></figure>
+        <figure class=" w-full h-52 mx-auto relative">
+            <img class ="w-full" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
+            <span class="absolute bg-[#171717] text-white bottom-2 right-2 p-1 rounded-lg">
+            ${hour} hours ${min} minutes ago
+            </span>
+        </figure>
         <div class="card-body flex flex-row items-center gap-5">
-            <div class="">
+            <div>
                 <img class="w-10 h-10 rounded-full" src="${video?.authors[0]?.profile_picture}" alt="image loading"/>
                 
             </div>
@@ -53,6 +70,7 @@ const handleLoadData = async() =>{
 
 
     });
+    
  }
 handleVideosLoader("1000")
 handleLoadData()
@@ -61,3 +79,5 @@ handleLoadData()
 function blogsPage(){
     window.location.href ='blog.html';
 }
+
+
