@@ -7,7 +7,7 @@ const handleLoadData = async() =>{
         // console.log(category);
         const div = document.createElement('div');
         div.innerHTML=`
-        <button onclick="handleVideosLoader('${category.category_id}')" class="text-base text-[#252525B2] px-2 md:px-8 rounded-lg md:text-2xl focus:bg-[#FF1F3D] hover:bg-[#FF1F3D] focus:text-white">
+        <button onclick="handleVideosLoader('${category.category_id}')" class="text-base text-[#252525B2] px-2 md:px-8 rounded-lg md:text-xl focus:bg-[#FF1F3D] hover:bg-[#FF1F3D] focus:text-white">
         ${category?.category}</button> 
         `
         catagoriesContainer.appendChild(div);
@@ -30,9 +30,7 @@ const handleLoadData = async() =>{
     const videosContainer = document.getElementById('videos-container');
     videosContainer.textContent = '';
     videos?.forEach(video => {
-        if(video?.others?.views !== null){
-            
-        }
+    
         let sec = video?.others?.posted_date;
         let hour = parseInt(sec/3600);
         let min = parseInt((sec%3600)/60);
