@@ -40,10 +40,9 @@ const handleLoadData = async() =>{
         const div = document.createElement('div');
         div.innerHTML =`
         <div class="card bg-base-100 shadow-xl">
-        <figure class=" w-full h-auto md:h-48 lg:h-60 rounded-lg relative">
-            <img class ="w-full h-72" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
-            ${video?.others?.posted_date?`<div class=" absolute badge badge-neutral bottom-2 right-2">${hour}hours ${min}minutes ago</div>`:"" }
-            </span>
+        <figure class=" w-full md:h-48 lg:h-60 rounded-lg relative">
+            <img class ="w-full h-auto md:48 md:h-72" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
+            ${video?.others?.posted_date?`<p class=" absolute bg-[#272727] text-white px-2 py-1 rounded-full bottom-2 right-2">${hour}hours ${min}minutes ago</p>`:"" }
         </figure>
         <div class="card-body flex flex-row gap-5">
             <div class="flex ">
@@ -74,9 +73,12 @@ const handleLoadData = async() =>{
 
         
     });
+    
  }
 handleVideosLoader("1000");
 handleLoadData();
+
+// sorted data
 const handleSort = async()=>{
     const res = await fetch('https://openapi.programming-hero.com/api/videos/category/1000');
     const data = await res.json();
@@ -100,10 +102,9 @@ const handleSort = async()=>{
         const div = document.createElement('div');
         div.innerHTML=`
         <div class="card bg-base-100 shadow-xl">
-        <figure class="h-auto w-full md:h-48 lg:h-60 rounded-lg relative">
-            <img class="w-full h-72" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
-            ${video?.others?.posted_date?`<div class=" absolute badge badge-neutral bottom-2 right-2">${hour}hours ${min}minutes ago</div>`:""}
-            </span>
+        <figure class="w-full md:h-48 lg:h-60 rounded-lg relative">
+            <img class="w-full h-auto md:48 md:h-72" src="${video?.thumbnail?video?.thumbnail:'no data available'}" alt="image loading" />
+            ${video?.others?.posted_date?`<p class=" absolute bg-[#272727] text-white px-2 py-1 rounded-full bottom-2 right-2">${hour}hours ${min}minutes ago</p>`:"" }
         </figure>
         <div class="card-body flex flex-row gap-5">
             <div>
